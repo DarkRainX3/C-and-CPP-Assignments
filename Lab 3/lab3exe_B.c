@@ -16,9 +16,12 @@ int main(void)
     int n2 = sizeof(str1);
 
     printf("str1 is %d bytes, and its length is %lu\n", n2, n1);
-    int c = 'a';
+    int c = 'a';//97 in ascii
     foo(str1, c, str2);
-
+    printf("%s",str1);
+    printf("\n");
+    printf("%s",str2);
+    printf("\nstr2 is %d bytes, and its length is %lu\n", sizeof(str2), strlen(str2));
     return 0;
 }
 

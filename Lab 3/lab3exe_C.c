@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int factorial(int n);
 void pascal_triangle(int n);
 /* REQUIRES: n > 0 and n <= 20
  PROMISES: displays a pascal_triangle. the first 5 line of the function's output
@@ -29,11 +30,27 @@ int main() {
         printf("Error: the maximum number of rows can be 20.\n");
         exit(1);
     }
-    
+
     pascal_triangle(nrow);
     return 0;
 }
 
+int factorial(int n){
+  int times;
+  int result = 1;
+  for (times = 1; times<=n;times++)
+    result=result*times;
+  return result;
+}
+
 void pascal_triangle(int n) {
-    // STUDENTS MUST COMPLETE THE REST OF IMPLEMENATION OF THIS FUNCTION
+  int j = 1;
+  for (int i = 0; i<n; i++){
+    printf("row %d: ",i);
+    for (int c = 0; c <= (n - i - 2); c++)
+         printf(" ");
+    for (int times = 0; times<=i;times++)
+      printf("%i ",factorial(i)/(factorial(times)*factorial(i-times)));
+    printf("\n");
+  }
 }

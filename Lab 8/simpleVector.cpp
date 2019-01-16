@@ -3,14 +3,14 @@
 
 /*
  NOTES ON MEMORY ALLOCATION POLICIES FOR SimpleVector OBJECT:
- 
+
  - If vector objects are supposed to be empty storageM will be NULL and the values
    of sizeM and capacityM must be set to zero.
  - If the objects of vector are supposed to be initialize with supplied values of
    an array, the size a and values in the dynamically memory space for storageM
    must be identical to the size and values in the supplied array. And, the
    values of sizeM and capacityM should be both set to the exact size of array.
- 
+
 - If any member function need to resize the vector, it should check the values of
   sizeM and capacityM:
   - If sizeM is equal to capacityM and vector is empty (i.e. capaictyM is equal to
@@ -56,17 +56,17 @@ const TYPE& SimpleVector::at(int i)const {
 //     memory space and adds the new value, val, to the end of the current vector
 //     and increments the value of sizeM by 1
 void SimpleVector::push_back(TYPE val) {
-    
+
 //  THIS FUNCTION MUST BE COMPLETED BY THE STUDENTS
 }
 
 
 SimpleVector::SimpleVector(const SimpleVector& source) {
 //  THIS FUNCTION MUST BE COMPLETED BY THE STUDENTS
-    
+
 }
 
 SimpleVector& SimpleVector::operator= (const SimpleVector& rhs ){
-//  THIS FUNCTION MUST BE COMPLETED BY THE STUDENTS    
+//  THIS FUNCTION MUST BE COMPLETED BY THE STUDENTS
     return *this;
 }

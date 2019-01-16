@@ -31,11 +31,11 @@ const ListItem& SimpleList::at(int n)const{
         cout << "\n Illigal Access. Program Terminates...";
         exit(1);
     }
-    
+
     const Node * ptr = headM;
     for(int i= 0; i < n; i++)
          ptr = ptr->get_next();
-    
+
     // POINT N - WHEN REACHED FOR THE FIRST TIME
     return ptr -> get_item();
 }
@@ -54,7 +54,7 @@ void SimpleList::push_back(const ListItem& item){
         Node* p = headM;
         while (p ->get_next()  != NULL)
             p = p ->get_next();
-        
+
         p ->set_next(new_node);
     }
     sizeM++;
@@ -69,7 +69,7 @@ void SimpleList::push_front(const ListItem& item){
     }
     new_node->set_next(headM);
     headM = new_node;
-    
+
     // POINT N - WHEN REACHED FOR THE FIRST TIME
     sizeM++;
 
@@ -80,7 +80,7 @@ void SimpleList::insert(const ListItem& itemA, int n){
         return;
     else if(n == 0)
         push_front(itemA);
-    else if(n == sizeM) 
+    else if(n == sizeM)
         push_back(itemA);
     else{
         Node *new_node = new Node(itemA);
@@ -125,7 +125,7 @@ void SimpleList::remove(int n){
     else{
         before = headM;
         be_deleted = before -> get_next();
-        
+
         int i = 1;
         while (i < n){
             before = be_deleted;
@@ -142,7 +142,7 @@ void SimpleList::copy(const SimpleList& source){
     Node* psrc = source.headM;
     if(psrc == NULL)
         return;
-    
+
     Node* pthis = headM;
     while (psrc != NULL){
         Node* copy = new Node(psrc -> get_item());
@@ -158,9 +158,7 @@ void SimpleList::copy(const SimpleList& source){
         }
         psrc = psrc -> get_next();
     }
-   
+
     sizeM = source.sizeM;
 
 }
-
-

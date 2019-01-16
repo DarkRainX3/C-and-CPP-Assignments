@@ -45,7 +45,7 @@ void OLList::insert(const ListItem& itemA)
 {
     Node *new_node = new Node;
     new_node->item = itemA;
-    
+
     if (headM == 0 || itemA <= headM->item ) {
         new_node->next = headM;
         headM = new_node;
@@ -69,9 +69,9 @@ void OLList::remove(const ListItem& itemA)
     // if list is empty, do nothing
     if (headM == 0 || itemA < headM->item)
         return;
-    
+
     Node *doomed_node = 0;
-    
+
     if (itemA == headM->item) {
         doomed_node = headM;
         headM = headM->next;
@@ -91,7 +91,7 @@ void OLList::remove(const ListItem& itemA)
 
 void OLList::destroy()
 {
-    
+
     // this function is not properly designed. As part of the exercise D
     // For exercise B: students are supposed to remove the folloiwng lines and
     // complete the definition of this helper function.
@@ -105,15 +105,13 @@ void OLList::copy(const OLList& source)
     // this function is not properly designed. As part of the exercise D
     // For exercise B: students are supposed to remove the folloiwng lines and
     // complete the definition of this helper function.
-    
+
     // The only effect of the next line is to tell the compiler
     // not to generate an "unused argument" warning.  Don't leave it
     // it in your solution.
     (void) source;
-    
+
     cout << "OLList::copy was called but isn't ready for use"
     << "--program is terminated.\n";
     exit(1);
 }
-
-
